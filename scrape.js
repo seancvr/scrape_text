@@ -1,7 +1,7 @@
 import { parse } from 'node-html-parser'
 import fs from 'node:fs';
 
-const url = 'https://www.appier.com/en/about/privacy-policy/'
+const url = 'https://www.stonetrees.tech/'
 
 async function getPageSource(url) {
   try {
