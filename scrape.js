@@ -26,7 +26,8 @@ function writeToFile(content, filename) {
 // extract name from url
 function getName(url) {
   const hostname = new URL(url).hostname
-  return hostname.split('.')[1]
+  // ['www', 'example', 'com']
+  return hostname.split('.')[1] // example
 }
 
 // parse page with node-html-parser
