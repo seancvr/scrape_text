@@ -1,7 +1,7 @@
 import { parse } from 'node-html-parser'
 import fs from 'node:fs';
 
-const url = 'https://www.stonetrees.tech/'
+const url = '<url goes here>'
 
 async function getPageSource(url) {
   try {
