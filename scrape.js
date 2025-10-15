@@ -1,5 +1,5 @@
 import { parse } from 'node-html-parser'
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 
 const url = '<url goes here>'
 
@@ -13,8 +13,8 @@ async function getPageSource(url) {
   }
 }
 
-function writeToFile(content, filename) {
-  fs.writeFile(`${filename}.txt`, content, err => {
+async function writeToFile(content, filename) {
+  await fs.writeFile(`${filename}.txt`, content, err => {
     if (err) {
       console.log(err)
     } else {
@@ -45,5 +45,5 @@ function textParser(html) {
 
 const html = await getPageSource(url)
 const sourceText = textParser(html)
-writeToFile(sourceText, getName(url))
+await writeToFile(sourceText, getName(url))
 
